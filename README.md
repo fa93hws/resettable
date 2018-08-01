@@ -5,6 +5,14 @@ Js decorator that mark properties that need to be reset and reset them at once.
 You can check the usage in the test folder (it's very simple) or by reading this readme written in shitty English
 
 ## Basic usage
+Usage:
+1. Create a resettable instance
+2. Decorate the class property that need to be reset in the future
+3. Decorate the class method that used to reset all marked variable
+
+Basic Example:
+
+```
 import Resettable from 'resettable';
 const resettable = new Resettable();
 class Foo {
@@ -28,3 +36,4 @@ const foo = new Foo();
 foo.clear();
 console.log(foo.barNum); // print 2
 console.log(foo.barStr); // print '2'
+```
