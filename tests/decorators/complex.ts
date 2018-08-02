@@ -24,7 +24,7 @@ const complexObjects = {
   },
   d: ['123', false, 2]
 }
-const reseted = {
+const resetted = {
   a: 2,
   b: '123',
   c: {
@@ -124,6 +124,6 @@ describe('complex object', () => {
     const testObj = new TestObj();
     testObj.change();
     testObj.reset();
-    expect(testObj.obj).toEqual(reseted)
+    expect(testObj.obj).toEqual(resetted)
   })
 })

@@ -1,3 +1,5 @@
+import * as cloneDeep from 'lodash.clonedeep';
+
 type Primitive = boolean | string | number;
 enum EType {
   object,
@@ -10,7 +12,8 @@ type ISet = (target: any, field: string | number, obj: any) => void;
 export default class OverwritableJSON {
   obj: any;
   constructor(json: any) {
-    this.obj = JSON.parse(JSON.stringify(json));
+    // this.obj = JSON.parse(JSON.stringify(json));
+    this.obj = cloneDeep(json);
     this.set = this.set.bind(this);
     this._getSetFun = this._getSetFun.bind(this);
     this._getType = this._getType.bind(this);

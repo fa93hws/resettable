@@ -1,16 +1,31 @@
 {
   "name": "resettable-decorator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "debug": "jest --watchAll"
+    "debug": "jest --watchAll",
+    "build": "tsc"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fa93hws/resettable"
+  },
+  "keywords": [
+    "decorator"
+  ],
+  "bugs": {
+    "url": "https://github.com/fa93hws/resettable"
+  },
+  "homepage": "https://github.com/fa93hws/resettable",
+  "author": "fa93hws",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^23.3.1",
+    "@types/lodash.clonedeep": "^4.5.4",
+    "babel-jest": "^23.4.2",
+    "commonjs": "0.0.1",
     "jest": "^23.4.2",
     "ts-jest": "^23.0.1",
     "ts-loader": "^4.4.2",
@@ -34,5 +49,8 @@
       "**/tests/**/*.+(ts|js)"
     ],
     "testURL": "http://localhost/"
+  },
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0"
   }
 }

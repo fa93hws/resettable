@@ -2,11 +2,12 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports":true,
     "baseUrl": ".",
-    "outDir": "build/dist",
-    "module": "commonjs",
-    "target": "es5",
+    "outDir": "./",
+    // "module": "commonjs",
+    "module": "es6",
+    "target": "es6",
     "lib": ["es6", "dom"],
-    "sourceMap": true,
+    "sourceMap": false,
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
@@ -27,7 +28,9 @@
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts"
+    "src/setupTests.ts",
+    "tests",
+    "*.js"
   ]
 }
   

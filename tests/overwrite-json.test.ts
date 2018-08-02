@@ -1,12 +1,9 @@
 import OverwritableJSON from '../src/overwrite-json';
 
-const plainObjWithoutFun = {
+const plainObj = {
   a: 1,
   b: false,
-  d: [1, 2, 3, 4]
-}
-const plainObj = {
-  ...plainObjWithoutFun,
+  d: [1, 2, 3, 4],
   c: function() { },
 };
 const arrayObjs = [{
@@ -47,9 +44,9 @@ describe('overwritableJSON', () => {
   test('array objs', () => {
     const overwritableJSON = new OverwritableJSON(arrayObjs);
     overwritableJSON.set({ 1: [2, 3, 4], 3: 4 });
-    expect(overwritableJSON.obj[0]).toEqual(plainObjWithoutFun);
+    expect(overwritableJSON.obj[0]).toEqual(plainObj);
     expect(overwritableJSON.obj[1]).toEqual([2, 3, 4]);
-    expect(overwritableJSON.obj[2]).toEqual(plainObjWithoutFun);
+    expect(overwritableJSON.obj[2]).toEqual(plainObj);
     expect(overwritableJSON.obj[3]).toEqual(undefined);
   })
   test('complex objs', () => {
@@ -67,11 +64,11 @@ describe('overwritableJSON', () => {
     });
     expect(overwritableJSON.obj.a).toEqual(2);
     expect(overwritableJSON.obj.e).toEqual({
-      ...plainObjWithoutFun,
+      ...plainObj,
       a:2
     })
-    expect(overwritableJSON.obj.f[0]).toEqual(plainObjWithoutFun);
-    expect(overwritableJSON.obj.f[1]).toEqual(plainObjWithoutFun);
+    expect(overwritableJSON.obj.f[0]).toEqual(plainObj);
+    expect(overwritableJSON.obj.f[1]).toEqual(plainObj);
     expect(overwritableJSON.obj.f.length).toEqual(3);
     expect(overwritableJSON.obj.f[2]).toEqual(1);    
   })

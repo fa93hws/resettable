@@ -1,4 +1,5 @@
 import OverwritableJSON from './overwrite-json';
+import * as cloneDeep from 'lodash.clonedeep';
 
 export interface IMountable {
   mounted?: () => void;
@@ -41,7 +42,8 @@ export default class Resettable {
     const defaults = this._defaults;
     descriptor.value = function(...args: any[]){
       for (let k in defaults) {
-        this[k] = defaults[k].obj
+        // this[k] = JSON.parse(JSON.stringify(defaults[k].obj))
+        this[k] = cloneDeep(defaults[k].obj)
       }
       if (originMethod !== undefined) originMethod.apply(this, args)
     }
